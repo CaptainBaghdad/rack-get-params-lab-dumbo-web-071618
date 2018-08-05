@@ -33,7 +33,11 @@ class Application
    
    if req.path.match(/add/)
        ans = req.params["item"]
-        @@items.include?(ans) ? @@cart << ans : resp.write "Sorry, this is an error message that has been rendered beacuse you entered the wrong information  that has noting  to do  with the last tune tat has been entered into the string."
+        if @@items.include?(ans) 
+          
+          @@cart << ans 
+        else 
+          resp.write "Sorry, this is an error message."
         
         
      
